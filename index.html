@@ -5,11 +5,12 @@
         <meta charset = "UTF-8">
         <title>Etch-A-Sketch</title>
 
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel = "stylesheet" href = "./styles/normalize.css">
         <link rel = "stylesheet" href = "./styles/styles.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <script defer src = "./scripts/script.js"></script>
-
     </head>
 
     <body>
@@ -22,7 +23,7 @@
             <button type = "button" class = "button" id = "shake">Shake</button>
             <input type = "color" id = "colorPicker">
 
-            <form class>
+            <form>
                 <input type = "radio" name = "color" value = "black" checked>
                 <label for = "black"> Black</label><br>
                 <input type = "radio" name = "color" value = "random">
@@ -30,11 +31,14 @@
                 <input type = "radio" name = "color" value = "custom">
                 <label for = "custom"> Custom</label>
             </form>
-            
 
-            <div class = "screen">
+            <p id = "sideText">Press <span id = "letterE">E</span> to toggle magical eraser!</p>
+
+            <div class = "screen" id = "scr">
                 
             </div>
+
+            <button type = "button" class = "button" id = "jukebox">Jukebox</button>
 
             <p id = "bottomText">Press C to toggle brush, shake to clear screen.</p>
 

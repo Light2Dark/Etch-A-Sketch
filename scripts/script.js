@@ -1,8 +1,18 @@
 let numSquares = 16;
 let color = "black";
 let brushToggle = true;
+let eraserToggle = false;
+let musicToggle = false;
+
+let eraseSound = new Audio('../audio/untitled.wav');
+let shakeSound = new Audio('../audio/sandshakefx.wav');
+let music = new Audio('../audio/bensound-romantic.mp3');
+music.volume = 0.05; music.loop = true;
+let jukebox = document.getElementById("jukebox");
 const screen = document.querySelector(".screen");
+
 document.addEventListener("keydown", toggleBrush);
+jukebox.addEventListener("click", playMusic);
 
 const colorChoices = document.querySelector("form");
 colorChoices.addEventListener("change", changeColor);
@@ -49,6 +59,7 @@ function removeGrid() {
     if (screen.querySelector(".grid") != null) {
         let oldGrid = screen.querySelector(".grid");
         screen.removeChild(oldGrid);
+        shakeSound.play();
     }
     return;
 }
@@ -57,13 +68,21 @@ function toggleBrush (e) {
     if (e.keyCode == "67") {
         brushToggle = !(brushToggle);
     }
+
+    if (e.keyCode == "69") {
+        eraserToggle = !(eraserToggle);
+        screen.classList.toggle("eraser");
+        eraseSound.play();
+    }
 }
 
 function changeColor(e) {
 
     if(brushToggle == false) {return;}
 
-    if (black.checked) {
+    if (eraserToggle) {
+        color = "rgb(153, 153, 153)";
+    } else if (black.checked) {
         color = "black";
     } else if (random.checked) {
         color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
@@ -72,8 +91,7 @@ function changeColor(e) {
     }
 
     if (e.target.type == "radio" || e.target.type == "color") {return;}
-    if (e.toElement.style.backgroundColor == "black" && black.checked) {return;} //some bug going on where all squares bg colour turns black, not sure if this fixes it. It rarely happens
-
+    
     if (e.toElement.classList == "square") {
         e.toElement.style.backgroundColor = color; // fix bug by checking to make sure the square is the selected element
     }
@@ -95,4 +113,15 @@ function checkNumSquare(e) {
     }
 
     return createScreen(numSquares);
+}
+
+function playMusic() {
+
+    musicToggle = !(musicToggle)
+    if (musicToggle) {
+        music.play();
+    } else if (musicToggle == false) {
+        music.pause();
+    }
+    return;
 }

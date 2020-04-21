@@ -1,7 +1,6 @@
 html {
     background: rgb(211,211,226);
-    background: linear-gradient(90deg, rgba(211,211,226,1) 0%, rgba(163,163,175,1) 50%, rgba(211,211,226,1) 100%);
-
+    background: linear-gradient(90deg, rgb(151, 151, 255) 0%, rgb(46, 46, 182) 50%, rgb(137, 137, 245) 100%);
     font-family: 'Pacifico', cursive, Arial, Helvetica, sans-serif;
 }
 
@@ -30,6 +29,10 @@ button:active, button:focus {
     outline: none;
 }
 
+button:hover, form:hover {
+    box-shadow: 0px 0px 1px 1px black;
+}
+
 #EtchASketch {
     height: 95vh;
     width: 75vw;
@@ -51,6 +54,10 @@ button:active, button:focus {
 
     background-color: rgb(153, 153, 153);
     border: 1px solid black;
+}
+
+.eraser {
+    cursor: url(../images/eraserresized.png), auto;
 }
 
 #brushSize {
@@ -103,6 +110,32 @@ label {
 #bottomText {
     text-align: center;
     margin-top: 22px;
+    font-size: 17px;
 }
 
+#sideText {
+    text-align: center;
+    font-size: 16px;
+    position: fixed;
+    float: right;
+    right: 14%;
+    top: 55%;
+    width: 7%;
+    color: rgb(255, 255, 196);
+}
+
+#letterE {
+    font-family: cursive;
+}
+
+#jukebox {
+    /*background-color: rgb(156, 118, 87);*/
+    background-color: rgb(123, 12, 170);
+    color: rgb(250, 255, 232);
+    border-color: rgb(22, 1, 97);
+    border-width: 3px;
+    border-radius: 10px;
+    height: 50px;
+    top: 80%;
+}
 
