@@ -4,9 +4,9 @@ let brushToggle = true;
 let eraserToggle = false;
 let musicToggle = false;
 
-let eraseSound = new Audio('../audio/untitled.wav');
-let shakeSound = new Audio('../audio/sandshakefx.wav');
-let music = new Audio('../audio/bensound-romantic.mp3');
+let eraseSound = document.getElementById("eraseSound");
+let shakeSound = document.getElementById("shakeSound");
+let music = document.getElementById("music");
 music.volume = 0.05; music.loop = true;
 let jukebox = document.getElementById("jukebox");
 const screen = document.querySelector(".screen");
