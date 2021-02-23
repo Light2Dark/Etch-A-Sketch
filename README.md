@@ -1,3 +1,5 @@
+https://light2dark.github.io/Etch-A-Sketch/
+
 One of the hardest projects so far, especially because I wanted it to look nice and feature packed. Initially, I tried using an Etch A Sketch as the bg image and creating a grid following the image, but resizing issues makes this approach really difficult.
 
 Then, I used CSS and cool fonts, shadows, styles to make the Etch A Sketch look really good. This was done using pure JS. 
